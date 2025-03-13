@@ -6,8 +6,28 @@ export const API_OPTIONS = {
   method: "GET",
   headers: {
     accept: "application/json",
-    Authorization:
-      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4MDk4OTk1ODQxMDQwYzVhNzYzOTVkMzdmYmJjNTE4ZSIsIm5iZiI6MTcxNjUwODU1Mi40ODgsInN1YiI6IjY2NGZkNzg4YTdjZmNhMzAxYmVjMTk1NiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.3BA7IHGBaXrlGKx24iJbVxICnVKjcdeKiJFx_FILQ-I",
+    Authorization: "Bearer " + process.env.REACT_APP_TMDB_KEY,
   },
 };
 export const IMG_CDN_URL = "https://image.tmdb.org/t/p/w500/";
+export const BG_URL =
+  "https://assets.nflxext.com/ffe/siteui/vlv3/04ef06cc-5f81-4a8e-8db0-6430ba4af286/web/SA-en-20250224-TRIFECTA-perspective_db68ed9e-06c2-426f-8c22-a8d2d050c3e9_large.jpg";
+export const SUPPORTED_LANGUAGES = [
+  {
+    identifier: "en",
+    name: "English",
+  },
+  {
+    identifier: "hindi",
+    name: "Hindi",
+  },
+  {
+    identifier: "malayalam",
+    name: "Malayalam",
+  },
+  {
+    identifier: "spanish",
+    name: "Spanish",
+  },
+];
+export const OPENAI_KEY = process.env.REACT_APP_OPENAI_KEY;

@@ -9,7 +9,7 @@ import {
 import { auth } from "../utils/firebase";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
-import { USER_AVATAR } from "../utils/constants";
+import { BG_URL, USER_AVATAR } from "../utils/constants";
 
 const Signin = () => {
   const dispatch = useDispatch();
@@ -49,7 +49,6 @@ const Signin = () => {
             .catch((error) => {
               setErrorMessage(error.message);
             });
-          console.log(user);
         })
 
         .catch((error) => {
@@ -65,7 +64,6 @@ const Signin = () => {
       )
         .then((userCredential) => {
           const user = userCredential.user;
-          console.log(user);
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -73,8 +71,6 @@ const Signin = () => {
           setErrorMessage(errorCode + " " + errorMessage);
         });
     }
-
-    console.log(message);
   };
   const toggleSignInForm = () => {
     setIsSignInForm(!isSigInForm);
@@ -83,13 +79,10 @@ const Signin = () => {
     <div>
       <Header />
       <div className="absolute">
-        <img
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/04ef06cc-5f81-4a8e-8db0-6430ba4af286/web/SA-en-20250224-TRIFECTA-perspective_db68ed9e-06c2-426f-8c22-a8d2d050c3e9_large.jpg"
-          alt="bg"
-        />
+        <img src={BG_URL} alt="bg" className="h-screen object-cover" />
       </div>
       <form
-        className="absolute bg-black text-white  w-3/12 p-12 my-36 mx-auto right-0 left-0 rounded-lg bg-opacity-80"
+        className="absolute bg-black text-white  w-3/12 p-12 my-36 mx-auto right-0 left-0 rounded-lg bg-opacity-80 w-full md:w/12"
         onSubmit={(e) => e.preventDefault()}
       >
         <h1 className="font-bold text-3xl py-4">
