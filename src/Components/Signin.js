@@ -27,7 +27,7 @@ const Signin = () => {
       createUserWithEmailAndPassword(
         auth,
         email.current.value,
-        password.current.value
+        password.current.value,
       )
         .then((userCredential) => {
           const user = userCredential.user;
@@ -43,7 +43,7 @@ const Signin = () => {
                   email: email,
                   displayName: displayName,
                   photoURL: photoURL,
-                })
+                }),
               );
             })
             .catch((error) => {
@@ -60,7 +60,7 @@ const Signin = () => {
       signInWithEmailAndPassword(
         auth,
         email.current.value,
-        password.current.value
+        password.current.value,
       )
         .then((userCredential) => {
           const user = userCredential.user;
@@ -78,11 +78,16 @@ const Signin = () => {
   return (
     <div>
       <Header />
-      <div className="absolute">
-        <img src={BG_URL} alt="bg" className="h-screen object-cover" />
+      <div className="absolute inset-0 -z-10">
+        <img src={BG_URL} alt="bg" className="w-screen h-screen object-cover" />
       </div>
       <form
-        className="absolute bg-black text-white  w-3/12 p-12 my-36 mx-auto right-0 left-0 rounded-lg bg-opacity-80 w-full md:w/12"
+        className="absolute bg-black text-white 
+  w-11/12 sm:w-8/12 md:w-5/12 lg:w-4/12 
+  p-8 sm:p-10 md:p-12 
+  my-24 sm:my-28 md:my-36 
+  mx-auto left-0 right-0 
+  rounded-lg bg-opacity-80"
         onSubmit={(e) => e.preventDefault()}
       >
         <h1 className="font-bold text-3xl py-4">
